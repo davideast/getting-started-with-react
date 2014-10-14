@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+  <title>JS Bin</title>
+</head>
+<body ng-app="binder">
+
+  <div ng-controller="BindCtrl">
+    <input type="text" ng-model="payment" />
+    {{ payment }}
+  </div>
+
+  <script>
+    (function(angular) {
+
+      var app = angular.module('binder', []);
+
+      app.controller('BindCtrl', function($scope) {
+
+        $scope.payment = 0;
+
+      });
+
+    }(angular));
+  </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "react-browserify-example",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "browserify -t reactify src/app.js > build/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "react": "^0.11.2",
+    "lodash": "^2.4.1",
+    "reactify": "^0.14.0"
+  }
+}

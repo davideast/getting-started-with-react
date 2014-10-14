@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8>
+  <title>State</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+</head>
+<body>
+
+  <!-- container node -->
+  <div id="app"></div>
+
+  <script src="http://fb.me/react-0.11.1.js"></script>
+  <script src="http://fb.me/JSXTransformer-0.11.1.js"></script>
+  <script type="text/jsx">
+  /** @jsx React.DOM */
+
+  /**
+   * 1. State overview
+   * 2. What kind of data do we store in state
+   * 3. Reconciliation
+   * 4. Never call state
+
+   Resources:
+   http://facebook.github.io/react/docs/interactivity-and-dynamic-uis.html#components-are-just-state-machines       http://facebook.github.io/react/docs/thinking-in-react.html#step-3-identify-the-minimal-but-complete-representation-of-ui-state
+   */
+
+  var MessageBox = React.createClass({
+
+    getInitialState: function () {
+      return {
+        isVisible: true,
+        titleMessage: 'Hello, World'
+      }
+    },
+
+    render: function() {
+
+      var inlineStyle = {
+        display: this.state.isVisible ? 'block' : 'none'
+      };
+
+      return (
+        <div className="container jumbotron" style={inlineStyle}>
+          <h2>{ this.state.titleMessage }</h2>
+
+          <SubMessage />
+        </div>
+      );
+    }
+  });
+
+  var SubMessage = React.createClass({
+    render: function() {
+      return (
+        <div>Its good to see you</div>
+      );
+    }
+  });
+
+  var reactComponent = React.renderComponent(
+    <MessageBox />,
+    document.getElementById('app')
+  );
+
+  </script>
+</body>
+</html>

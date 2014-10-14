@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+  <title>Computer Angular</title>
+</head>
+<body ng-app="binder">
+
+  <div ng-controller="BindCtrl">
+    <input type="text" ng-model="payment" />
+    <input type="text" ng-model="payment2" />
+    {{ total }}
+  </div>
+
+  <script>
+    (function(angular) {
+
+      var app = angular.module('binder', []);
+
+      app.controller('BindCtrl', function($scope) {
+
+        $scope.payment = 0;
+        $scope.payment2 = 0;
+
+        $scope.$watch('payment', function(newValue) {
+          $scope.calculateTotal();
+        });
+
+        $scope.$watch('payment2', function(newValue) {
+          $scope.calculateTotal();
+        });
+
+        $scope.calculateTotal = function() {
+          $scope.total = parseInt($scope.payment, 10) + parseInt($scope.payment2, 10);
+        };
+
+      });
+
+    }(angular));
+  </script>
+</body>
+</html>

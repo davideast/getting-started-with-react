@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="http://fb.me/react-with-addons-0.11.0.js"></script>
+  <script src="http://fb.me/JSXTransformer-0.11.1.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js"></script>
+  <meta charset="utf-8">
+  <title>React Link</title>
+</head>
+<body>
+
+  <div id="app"></div>
+
+  <script type="text/jsx">
+    /** @jsx React.DOM */
+
+    var App = React.createClass({
+      mixins: [React.addons.LinkedStateMixin],
+
+      getInitialState: function() {
+        return {
+          payment: 0
+        }
+      },
+
+      render: function() {
+        return (
+          <div>
+            <input type="text" valueLink={this.linkState('payment')} />
+            { this.state.payment }
+          </div>
+        );
+      }
+
+    });
+
+    React.renderComponent(
+      <App />,
+      document.getElementById('app')
+    );
+
+  </script>
+</body>
+</html>

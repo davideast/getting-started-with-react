@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset=utf-8>
+      <title>Voteit</title>
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+      <style>
+         body {
+           background: #FAFAFA;
+         }
+         .badge-success {
+           background: #5cb85c;
+         }
+         .badge-danger {
+           background: #d9534f;
+         }
+         .list-group-item {
+           padding: 20px 15px;
+         }
+         .form-control, .btn, .badge {
+           border-radius: 0;
+         }
+         #feedForm {
+           display: none;
+         }
+      </style>
+   </head>
+   <body>
+
+     <div class="jumbotron text-center">
+        <h2>Voteit</h2>
+     </div>
+
+
+<div id="app">
+  <div>
+
+    <div class="container">
+      <button class="btn btn-success btn-block">Create New Item</button>
+    </div>
+
+    <form class="container">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Title">
+        <input type="text" class="form-control" placeholder="Description">
+        <button type="submit" class="btn btn-primary btn-block">Add</button>
+      </div>
+    </form>
+
+    <br>
+    <br>
+
+    <div class="container">
+
+      <ul class="list-group">
+
+        <li class="list-group-item">
+          <span class="badge badge-success">60</span>
+          <h4>JavaScript is fun</h4>
+          <span>Lexical scoping FTW</span>
+          <span class="pull-right">
+            <button id="up" class="btn btn-sm btn-primary">&uarr;</button>
+            <button id="down" class="btn btn-sm btn-primary">&darr;</button>
+          </span>
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+   </body>
+</html>
